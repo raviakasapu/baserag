@@ -140,7 +140,6 @@ def main():
                     | StrOutputParser()
             )
             #st.session_state.conversation = get_conversation_chain(vector_store)
-            
             response=rag_chain.invoke(question)
             st.write(response)
 
