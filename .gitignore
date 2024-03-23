@@ -4,3 +4,5 @@
 *.pkl
 *.pdf
 README.md
+data/
+vectorstore/
