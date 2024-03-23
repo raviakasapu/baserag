@@ -1,49 +1,14 @@
-import easyocr as ocr  #OCR
 import streamlit as st  #Web App
-from PIL import Image #Image Processing
 import numpy as np #Image Processing 
-
-# To analyze the PDF layout and extract text
-from pdfminer.high_level import extract_pages, extract_text
-from pdfminer.layout import LTTextContainer, LTChar, LTRect, LTFigure
-# To extract text from tables in PDF
-import pdfplumber
-# To extract the images from the PDFs
-from PIL import Image
-from pdf2image import convert_from_path
-
-import streamlit as st
 import pandas as pd
 
-import gradio as gr
 import time
-from PyPDF2 import PdfReader
-import easyocr as ocr  #OCR
-import streamlit as st  #Web App
-from PIL import Image #Image Processing
-import numpy as np #Image Processing 
-# To read the PDF
-import PyPDF2
-# To analyze the PDF layout and extract text
-from pdfminer.high_level import extract_pages, extract_text
-from pdfminer.layout import LTTextContainer, LTChar, LTRect, LTFigure
-# To extract text from tables in PDF
-import pdfplumber
-# To extract the images from the PDFs
-from PIL import Image
-from pdf2image import convert_from_path
-# To perform OCR to extract text from images
-import pytesseract
-# To remove the additional created files
+
 import os
 import tiktoken
-import streamlit as st
-import pandas as pd
 from io import StringIO
 import time
 import json
-import openai
-
 
 import requests
 from langchain_community.document_loaders import TextLoader
@@ -62,17 +27,6 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 
-from datasets import Dataset
-
-from ragas import evaluate
-from ragas.metrics import (
-    faithfulness,
-    answer_relevancy,
-    context_recall,
-    context_precision,
-)
-
-import os
 from dotenv import load_dotenv
 from htmlTemplates import bot_template, user_template, css
 
