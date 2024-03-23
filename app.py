@@ -35,7 +35,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 def load_knowledgeBase():
     embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY)
-    DB_FAISS_PATH = "../Ragas-LangChain-Evaluation/vectorstore/db_faiss/"
+    DB_FAISS_PATH = "./vectorstore/db_faiss/"
     db = FAISS.load_local(
             DB_FAISS_PATH, 
             embeddings, 
