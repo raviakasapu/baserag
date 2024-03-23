@@ -1,4 +1,4 @@
 data/
 vectorstore/
 .env
-.ipynb
+*.ipynb
