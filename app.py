@@ -58,7 +58,7 @@ def load_llm():
     llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, api_key=OPENAI_API_KEY)
     return llm
 
-knowledgeBase=load_knowledgeBase()
+#knowledgeBase=load_knowledgeBase()
 prompt = load_prompt()
 llm=load_llm()
 
@@ -142,7 +142,7 @@ def main():
             #st.session_state.conversation = get_conversation_chain(vector_store)
             
             response=rag_chain.invoke(question)
-            st.write(context)
+            st.write(response)
 
 if __name__ == '__main__':
     main()
