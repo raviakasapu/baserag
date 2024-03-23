@@ -1,3 +1,15 @@
+---
+title: Base Rag q and A
+emoji: 🌍
+colorFrom: red
+colorTo: purple
+sdk: streamlit
+sdk_version: 1.28.2
+app_file: app.py
+pinned: false
+license: apache-2.0
+---
+
 # LLM Evluation using Ragas and Langchain
 
 Ragas is a framework that helps you evaluate an enterprise Retrieval Augmented Generation (RAG) pipelines. 
