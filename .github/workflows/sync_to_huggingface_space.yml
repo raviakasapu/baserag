@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_SPACES_TOKEN }}
-        run: git push https://ravi259:$HF_TOKEN@huggingface.co/spaces/ravi259/baserag_hf main
+        run: git push --force https://ravi259:$HF_TOKEN@huggingface.co/spaces/ravi259/baserag_hf main
