@@ -127,7 +127,7 @@ def main():
         with st.spinner("Get ready..."):  
             text_chunks = get_chunk_text(question)
             
-            db = FAISS.load_local(folder_path="../Ragas-LangChain-Evaluation/vectorstore/db_faiss/",embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY),allow_dangerous_deserialization=True, index_name="njmvc_Index")
+            db = FAISS.load_local(folder_path="./vectorstore/db_faiss/",embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY),allow_dangerous_deserialization=True, index_name="njmvc_Index")
             searchDocs = db.similarity_search("what is the NJMVC driving test")
 
             similar_embeddings=FAISS.from_documents(documents=searchDocs, embedding=OpenAIEmbeddings(api_key=OPENAI_API_KEY))
