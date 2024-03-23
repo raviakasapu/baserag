@@ -1,4 +1,5 @@
-data/
-vectorstore/
 .env
 *.ipynb
+*.pdf
+*.faiss
+*.pkl

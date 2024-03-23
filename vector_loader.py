@@ -254,7 +254,7 @@ def save_to_vector_store(text):
 #create a new file named vectorstore in your current directory.
 if __name__=="__main__":
         DB_FAISS_PATH = 'vectorstore/db_faiss'
-        file_name = "./data/drivermanual-2-very-small.pdf"
+        file_name = "./data/drivermanual-2-small.pdf"
         #loader=read_file_get_prompts(file_name)
         text=read_file_get_prompts(file_name)
         #pdfReaded = PyPDF2.PdfReader(file_name)
