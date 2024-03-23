@@ -35,7 +35,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 def load_knowledgeBase():
     embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY)
-    DB_FAISS_PATH = "./vectorstore/db_faiss/"
+    DB_FAISS_PATH = "vectorstore/db_faiss/"
     db = FAISS.load_local(
             DB_FAISS_PATH, 
             embeddings, 
@@ -45,7 +45,7 @@ def load_knowledgeBase():
     return db
 def load_prompt():
     prompt = """ You are helping students to pass NJMVC Knowledge Test. Provide a Single multiple choice question with 4 options to choose from.
-    Use the context to provide the question and answer choices.
+    Use the information from context ONLY to provide the question and answer choices.
     context = {context}
     question = {question}
     if the answer is not in the pdf answer "i donot know what the hell you are asking about"
@@ -142,7 +142,7 @@ def main():
             #st.session_state.conversation = get_conversation_chain(vector_store)
             
             response=rag_chain.invoke(question)
-            st.write(response)
+            st.write(context)
 
 if __name__ == '__main__':
     main()
