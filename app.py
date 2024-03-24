@@ -142,6 +142,7 @@ def main():
             #st.session_state.conversation = get_conversation_chain(vector_store)
             response=rag_chain.invoke(question)
             st.write(response)
+            st.write(searchDocs)
 
 if __name__ == '__main__':
     main()
