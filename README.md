@@ -34,6 +34,14 @@ Evaluation or RAG approach using LangChain and OpenAI
 
 
 ## Usage
+ * add your PDF files in the data folder
+ * update the path in the vector_loader.py and run the file using
+    `python vector_loader.py`
+* update the index name for the DB
+* this will generate local FAISS vector db files
+* update the index files in app.py 
+* run the streamlit app using
+    `streamlit run app.py`
 
 ## Sample Output
 
