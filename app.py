@@ -35,7 +35,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 def load_knowledgeBase():
     embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY)
-    DB_FAISS_PATH = "vectorstore/db_faiss/"
+    DB_FAISS_PATH = "./vectorstore/db_faiss/"
     db = FAISS.load_local(
             DB_FAISS_PATH, 
             embeddings, 
@@ -45,10 +45,10 @@ def load_knowledgeBase():
     return db
 def load_prompt():
     prompt = """ You are helping students to pass NJMVC Knowledge Test. Provide a Single multiple choice question with 4 options to choose from.
-    Use the information from context ONLY to provide the question and answer choices.
+    Use the information from context provided below to provide the question and answer choices.
     context = {context}
     question = {question}
-    if the answer is not in the pdf answer "i donot know what the hell you are asking about"
+    if the context is not available, say I cannot give Question"
         """
     prompt = ChatPromptTemplate.from_template(prompt)
     return prompt
@@ -128,7 +128,7 @@ def main():
             text_chunks = get_chunk_text(question)
             
             db = FAISS.load_local(folder_path="./vectorstore/db_faiss/",embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY),allow_dangerous_deserialization=True, index_name="njmvc_Index")
-            searchDocs = db.similarity_search("what is the NJMVC driving test")
+            searchDocs = db.similarity_search(question)
 
             similar_embeddings=FAISS.from_documents(documents=searchDocs, embedding=OpenAIEmbeddings(api_key=OPENAI_API_KEY))
             #creating the chain for integrating llm,prompt,stroutputparser
